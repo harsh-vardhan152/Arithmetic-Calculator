@@ -4,68 +4,91 @@ package arithmeticcalculator;
 import java.util.*;
 
 public class Calculator {
-	static int n1, n2;
-	Calculator(int n1,int n2){
-		this.n1=n1;
-		this.n2=n2;
+	
+	// Variable deceleration
+	static double num1, num2;
+	private static String OP;
+	
+	// Creating method for reference
+	Calculator(double num1,double num2){
+		this.num1=num1;
+		this.num2=num2;
 	}
+	//creating scanner object
 	Scanner sc = new Scanner(System.in);
-	int addition()
+	
+	//
+	double addition()
 	{
 		System.out.println("Enter first number for addition");
-		n1=sc.nextInt();
+		num1=sc.nextDouble();
 		System.out.println("Enter second number for addition");
-		n2=sc.nextInt();
-		return n1+n2;
+		num2=sc.nextDouble();
+		return num1+num2;
 	}
-	int subtraction()
+	double subtraction()
 	{
 		System.out.println("Enter first numbers for subtraction");
-		n1=sc.nextInt();
+		num1=sc.nextDouble();
 		System.out.println("Enter second numbers for subtraction");
-		n2=sc.nextInt();
-		return n1-n2;
+		num2=sc.nextDouble();
+		return num1-num2;
 	}
-	int multiplication()
+	double multiplication()
 	{
 		System.out.println("Enter first numbers for multiply");
-		n1=sc.nextInt();
+		num1=sc.nextDouble();
 		System.out.println("Enter second numbers for multiply");
-		n2=sc.nextInt();
-		return n1*n2;
+		num2=sc.nextDouble();
+		return num1*num2;
 	}
-	int division()
+	double division()
 	{
 		System.out.println("Enter first numbers for divide");
-		n1=sc.nextInt();
+		num1=sc.nextDouble();
 		System.out.println("Enter second numbers for divide");
-		n2=sc.nextInt();
-		return(n1/n2);
+		num2=sc.nextDouble();
+		if(num2==0) {
+			System.out.println("Number can not be divide by zero");
+		}
+		return num1/num2;
 	}
 	public static void main(String[] args)
 	{
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter the operation that you want to perform by writing the correct form as mention below:- \n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division");
-		String str = s.nextLine();
-		Calculator obj = new Calculator(n1,n2);
-		int n=0;
-		switch(str)
+		OP = s.nextLine();
+		Calculator obj = new Calculator(num1,num2);
+		double n=0;
+		switch(OP)
 		{
 		case "Addition":
 			n=obj.addition();
+			System.out.println("Answer = "+n);
 			break;
 		case "Subtraction":
 			n=obj.subtraction();
+			System.out.println("Answer = "+n);
 			break;
 		case "Multiplication":
 			n=obj.multiplication();
+			System.out.println("Answer = "+n);
 			break;
 		case "Division":
 			n=obj.division();
+			if(num2==0) 
+			{
+				break;
+			}
+			else 
+			{
+			System.out.println("Answer = "+n);
+			}
 			break;
 		default:
 			System.out.println("Wrong operations selected or Character don't match with the input");
 		}
-		System.out.println("Answer = "+n);
+		
 	}
+
 }
