@@ -17,7 +17,7 @@ public class Calculator {
 	//creating scanner object
 	Scanner sc = new Scanner(System.in);
 	
-	//
+	//created addition method
 	double addition()
 	{
 		System.out.println("Enter first number for addition");
@@ -26,6 +26,8 @@ public class Calculator {
 		num2=sc.nextDouble();
 		return num1+num2;
 	}
+	
+	//created subtraction method
 	double subtraction()
 	{
 		System.out.println("Enter first numbers for subtraction");
@@ -34,6 +36,8 @@ public class Calculator {
 		num2=sc.nextDouble();
 		return num1-num2;
 	}
+	
+	//created multiplication method
 	double multiplication()
 	{
 		System.out.println("Enter first numbers for multiply");
@@ -42,6 +46,7 @@ public class Calculator {
 		num2=sc.nextDouble();
 		return num1*num2;
 	}
+	//creating division method
 	double division()
 	{
 		System.out.println("Enter first numbers for divide");
@@ -53,13 +58,18 @@ public class Calculator {
 		}
 		return num1/num2;
 	}
+	
+	//created main method  
 	public static void main(String[] args)
 	{
+		//creating scanner object again
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter the operation that you want to perform by writing the correct form as mention below:- \n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division");
 		OP = s.nextLine();
+		// creating calculator object 
 		Calculator obj = new Calculator(num1,num2);
 		double n=0;
+		// checking the operation that user give us as an input and call the method 
 		switch(OP)
 		{
 		case "Addition":
